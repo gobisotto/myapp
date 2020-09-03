@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { TabsPage } from './tabs.page';
+import { Routes, RouterModule } from '@angular/router';
+
+import { IntroPage } from './intro.page';
+import { TabsPage } from '../tabs/tabs.page';
+import { Tab1Page } from '../tab1/tab1.page';
+import { Tab2Page } from '../tab2/tab2.page';
 
 const routes: Routes = [
   {
@@ -9,11 +13,11 @@ const routes: Routes = [
     children: [
       {
         path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        component: Tab1Page,
       },
       {
         path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        component: Tab2Page,
       },
       {
         path: '',
@@ -24,13 +28,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
+    component: IntroPage
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class TabsPageRoutingModule {}
+export class IntroPageRoutingModule { }

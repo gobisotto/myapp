@@ -1,0 +1,25 @@
+ion-slides {
+    height: 100%;
+}
+
+.slide-image {
+    display: block;
+}
+
+.slide-image h2 {
+    margin-top: 1.8rem;
+}
+
+.slide-image img {
+    max-height: 60%;
+    max-width: auto;
+    margin: 40px 0 10px;
+    pointer-events: none;
+}
+
+p {
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ion-color-step-600, #60646b);
+}
